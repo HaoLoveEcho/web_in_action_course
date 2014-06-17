@@ -1,0 +1,50 @@
+header {
+   height: 50px;
+   border-bottom: 1px solid gray;
+}
+
+
+.select_users {
+    position: absolute;
+    right: 65px;
+    top: 15px;
+}
+
+ul.users, ul.admin {
+    position: absolute;
+    right: 0;
+}
+
+ul.admin {
+    display: none;
+}
+
+.favs_list {
+    float: left;
+    width: 175px;
+    margin-left: 45px;
+    border: 1px solid blue;
+}
+
+ul.favs {
+    width: 170px;
+    
+}
+
+.movie_list, .movie_single {
+    margin-left: 225px;
+    width: 610px;
+    border: 1px solid red;
+}
+
+.thumbnail {
+    width: 178px;
+    height: 100px;
+}
+
+footer {
+    clear: both;
+    height: 60px;
+    border: 1px solid green;
+    margin-top: 30px;
+}

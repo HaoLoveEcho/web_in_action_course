@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+    
+<html>
+    <head>
+        <style>
+            .favs {
+                float: left;
+                margin-left: 50px;
+            }
+            .non_favs {
+                float: left;
+                margin-left: 50px;
+            }
+            .movie_list:hover {
+                background-color: grey;
+            }            
+        </style>
+        <script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src = "../SCRIPTS/jquery.tinysort.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $(document).on('click', '.movie_list', function() {
+                   $id = $(this).attr('id').split('_');
+                   $id = $id[1];
+                   $list = $(this).closest('div').attr('class');
+                                      
+                   if ($list=="favs") {
+                    $addList = ".non_favs";
+                   } else {
+                    $addList = ".favs";
+                   }
+                   
+                   $(this).remove();                   
+                   $($addList + ' ul').append("<li class='movie_list' id='movie_"  + $id + "'>Movie "  + $id + "</li>");
+                   $('li').tsort();
+                });
+            }); // End doc ready
+        </script>
+    </head>
+
+    <body>
+        <div class="favs">
+            <h2>Favourites</h2>
+            <ul>
+                <li class="movie_list" id="movie_1">Movie 1</li>
+                <li class="movie_list" id="movie_2">Movie 2</li>
+                <li class="movie_list" id="movie_3">Movie 3</li>
+            </ul>
+        </div>
+        
+        <div class="non_favs">
+            <h2>Non-Favourites</h2>
+            <ul>
+                <li class="movie_list" id="movie_4">Movie 4</li>
+                <li class="movie_list" id="movie_5">Movie 5</li>
+                <li class="movie_list" id="movie_6">Movie 6</li>
+            </ul>
+        </div>
+        
+    </body>
+</html>
