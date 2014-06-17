@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+    
+<html>
+    <head>
+        <script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $(document).on('click', '.add_to_favs', function() {
+                    $(this).text("Remove from favourites")
+                        .removeClass('add_to_favs')
+                        .addClass('remove_from_favs');
+                });
+                $(document).on('click', '.remove_from_favs', function() {
+                    $(this).text("Add to favourites")
+                        .removeClass('remove_from_favs')
+                        .addClass('add_to_favs');                    
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+        <p class="add_to_favs">Add to favourites</p>
+    </body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+    
+<html>
+    <head>
+        <style>
+            .favs {
+                width: 100px;
+            }
+            .movie_list {
+                line-height: 30px;
+                list-style: none;
+            }
+            .movie_list:hover {
+                background-color: grey;
+            }
+            .trash {
+                background: url('sprites.png') 0 0 no-repeat;
+                margin: 30px 0 30px 30px;
+                padding-top: 20px;
+                background-position: 0 0;	
+                width: 60px;
+                height: 40px;
+            }
+            .trash:hover {
+                background-position: 0 -61px ;
+            }
+        </style>
+        <script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <script>
+            $(document).ready(function() {
+
+            }); // End document ready
+        </script>
+    </head>
+
+    <body>
+        <div class="favs">
+            <h2>Favourites</h2>
+            <ul>
+                <li class="movie_list" id="movie_1">Movie 1</li>
+                <li class="movie_list" id="movie_2">Movie 2</li>
+                <li class="movie_list" id="movie_3">Movie 3</li>
+                <li class="movie_list" id="movie_4">Movie 4</li>
+                <li class="movie_list" id="movie_5">Movie 5</li>
+                <li class="movie_list" id="movie_6">Movie 6</li>
+            </ul>
+        </div>
+        
+        <div class="trash"></div>
+        
+    </body>
+</html>

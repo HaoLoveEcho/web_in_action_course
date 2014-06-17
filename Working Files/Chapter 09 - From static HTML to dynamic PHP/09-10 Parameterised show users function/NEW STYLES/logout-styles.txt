@@ -1,0 +1,15 @@
+ul.users_menu li.logout {
+	border-top: 1px solid grey;
+	text-transform: uppercase;
+}
+
+ul.users_menu li.logout a {
+	background-color: white;
+	color: black;
+}
+
+ul.users_menu li.logout a:hover {
+	background-color: black;
+	color: white;
+}
+
