@@ -4,13 +4,21 @@ include 'connect.php';
 
 if (isset($_POST['username'])) {
     $username = $_POST['username'];
+  echo "Username: $username<br>";
+} else {
+  $username = "";
 }
-
 if (isset($_POST['password'])) {
-    $password = $_POST['password'];
+    $password = $db->real_escape_string($_POST['password']);
+  echo "Password: $password<br>";
+}else {
+  $password = "";
 }
 
-$sql = "SELECT * FROM `test_db` ORDER BY `name`";
+
+
+
+$sql = "SELECT * FROM `test_db` WHERE `name` = '$username' && `password` = '$password' ORDER BY `name`";
 
 $result = $db->query($sql);
 

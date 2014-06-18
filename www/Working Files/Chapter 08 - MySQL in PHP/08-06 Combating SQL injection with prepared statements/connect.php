@@ -3,7 +3,7 @@
 $dbConnect = array(
     'server' => 'localhost',
     'user' => 'root',
-    'pass' => '',
+    'pass' => '123',
     'name' => 'test_db'
 );
 
