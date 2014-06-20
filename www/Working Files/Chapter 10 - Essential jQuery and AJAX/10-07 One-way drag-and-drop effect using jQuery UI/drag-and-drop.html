@@ -21,15 +21,29 @@
                 width: 60px;
                 height: 40px;
             }
-            .trash:hover {
+            .trash:hover, .trash_hover {
                 background-position: 0 -61px ;
             }
         </style>
         <script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <script src = "http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
         <script>
             $(document).ready(function() {
+              $('.favs li').draggable({
+                helper: 'clone',
+                drag: function() {
+                  $('.trash').addClass('trash_hover');
+                }
+              }); // End draggable
 
+              $('.trash').droppable({
+                accept: '.favs li',
+                drop: function(event, ui) {
+                  $id = $(ui.draggable).attr('id').split("_");
+                  $id = $id[1];
+                  $('li#movie_' + $id).remove();
+                }
+              }); // End droppable
             }); // End document ready
         </script>
     </head>
